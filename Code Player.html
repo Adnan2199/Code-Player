@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <title>WebPage</title>
+        <script type="text/javascript" src="JQuery/Jquery.min.js"></script>
+        <script src="JQuery/jquery-ui/jquery-ui.js"></script>
+        <link href="JQuery/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+        <style type=text/css>
+            #menu
+            {
+                background-color: lightgrey;
+                height:50px;
+                margin:3px;
+                float:left;
+                width:1230.33px;
+            }
+            #code
+            {
+                outline-color: grey;
+                
+                
+            }
+            #heading
+            {
+                position: relative;
+                font-size:17px;
+                bottom:3px;
+                left:15px;
+                font-family: 'Joan', serif;
+                float:left;
+            }
+            body
+            {
+                margin:0%;
+            }
+            .button
+            {
+                float:left;
+                position:relative;
+                left:300px;
+                top:6px;
+                margin:2px;
+                height:35px;
+                width:100px;
+            }
+            .button:hover
+            {
+                background-color:#CCE1F2;
+            }
+            .input
+            {
+                height:523.33px;
+                width:1215px;
+                margin-left:2px;
+                outline-color: grey;
+                outline-width:1px;
+                float:left;
+            }
+            .input:hover
+            {
+                outline-color: grey;
+            }
+            .input:focus
+            {
+                outline-color: grey;
+            }
+            .hidden
+            {
+                display:none;  
+            }
+            #html
+            {
+                float:left;
+                margin-left:5px;
+            }
+            #css
+            {
+                float:left;
+            }
+            #js
+            {
+                float:left;
+            }
+            #op
+            {
+                float:left;
+                border: 1px;
+                border-color: grey;
+                border-style: solid;
+                padding-top:10px;
+            }
+            .selected
+            {
+                background-color:#CCE1F2;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <p id="heading"><strong>Code Player</strong></p>
+            <button class="button" id="htmlb" >HTML</button>
+            <button class="button" id="cssb" >CSS</button>
+            <button class="button" id="jsb" >Javascript</button>
+            <button class="button" id="opb" >Output</button>
+            <button class="button" id="run" >Run</button>
+        </div>
+        <div id="code">
+            <textarea class="input"  id="html" ></textarea>
+            <textarea class="input"  id="css" ></textarea>
+            <textarea class="input"  id="js" ></textarea>
+            <iframe class="input"  id="op" ></iframe>
+           
+        </div>
+        <script type="text/javascript">
+            
+            $(".input").addClass("hidden");
+            var active
+            var width=$("body").width();
+            $("#htmlb").click(function(){
+                if($("#html").hasClass("active"))
+                {
+                    $("#htmlb").removeClass("selected");
+                    $("#html").addClass("hidden");
+                    $("#html").removeClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+                else
+                {
+                    $("#htmlb").addClass("selected");
+                    $("#html").removeClass("hidden");
+                    $("#html").addClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+            });
+            $("#cssb").click(function(){
+                if($("#css").hasClass("active"))
+                {
+                    $("#cssb").removeClass("selected");
+                    $("#css").addClass("hidden");
+                    $("#css").removeClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+                else
+                {
+                    $("#cssb").addClass("selected");
+                    $("#css").removeClass("hidden");
+                    $("#css").addClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+            });
+            $("#jsb").click(function(){
+                if($("#js").hasClass("active"))
+                {
+                    $("#jsb").removeClass("selected");
+                    $("#js").addClass("hidden");
+                    $("#js").removeClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+                else
+                {
+                    $("#jsb").addClass("selected");
+                    $("#js").removeClass("hidden");
+                    $("#js").addClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+            });
+            $("#opb").click(function(){
+                if($("#op").hasClass("active"))
+                {
+                    $("#opb").removeClass("selected");
+                    $("#op").addClass("hidden");
+                    $("#op").removeClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+                else
+                {
+                    $("#opb").addClass("selected");
+                    $("#op").removeClass("hidden");
+                    $("#op").addClass("active");
+                    active=4-$(".hidden").length;
+                    $(".input").width((width/active)-15);
+                }
+            });
+            $("#run").click(function(){
+                $('iframe').attr('src', $('iframe').attr('src'));
+                var css=$("#css").val();
+                var html=$("#html").val();
+                var js=$("#js").val();
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + css + "</style></head><body>" + html + "</body></html>");
+                document.getElementById("op").contentWindow.eval(js);
+            });
+            
+        </script>
+    </body>
+</html>

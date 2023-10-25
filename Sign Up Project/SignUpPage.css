@@ -1,0 +1,109 @@
+            body {
+                background-image:url("C:/Adnan BMS/College/Code/Web Dev/Sample Pictures/clouds.jpg");
+                background-size:1239px 579px;
+            }   
+
+            #card {
+                background-color: white;
+                opacity:0.2;
+                width:500px;
+                height:300px;
+                border-radius:15px;
+                margin:auto;
+                position:relative;
+                top:120px;
+            }
+
+            #body {
+                background-color: none;
+                width:500px;
+                height:300px;
+                border-radius:15px;
+                margin:auto;
+                position:relative;
+                bottom:180px;
+                
+            }
+
+            #email {
+                height:50px;
+                width:365px;
+                background-color: white;
+                border-radius:5px;
+                border:1px #DDDFE2 solid;
+                font-size:17px;
+                color:black;
+                position:relative;
+                left:15px;
+                top:15px;
+                padding:15px;
+                margin:0px;
+                position:relative;
+                left:66px;
+                top:30px;
+            }
+
+            #pass {
+                height:50px;
+                width:365px;
+                border-radius:5px;
+                border:1px #DDDFE2 solid;
+                font-size:17px;
+                color:black;
+                position:relative;
+                left:15px;
+                top:15px;
+                padding:15px;
+                margin:0px;
+                position:relative;
+                top:30px;
+                left:66px;
+            }
+
+            #wrongmail {
+                position:relative;
+                top:20px;
+                left:70px;
+                color:red;
+            }
+
+            #signup {
+                background-color: #1B40A6;
+                color:white;
+                font-weight: bold;
+                font-size:medium;
+                position:relative;
+                top:35px;
+                left:145px;
+                height:48px;
+                width:200px;
+                border-radius:5px;
+                border:0;   
+            }
+
+            #wrongpass {
+                position:relative;
+                top:20px;
+                left:70px;
+                color:red;
+            }
+
+            #confirmpass {
+                height:50px;
+                width:365px;
+                border-radius:5px;
+                border:1px #DDDFE2 solid;
+                font-size:17px;
+                color:black;
+                position:relative;
+                top:30px;
+                left:65px;
+                padding: 15px;
+            }
+
+            #wrongconfirmpass {
+                position:relative;
+                top:20px;
+                left:70px;
+                color:red;
+            }
